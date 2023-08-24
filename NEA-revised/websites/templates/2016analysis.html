@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}2016 Analysis{% endblock %}
+
+{% block body %}
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+  new Chart("myChart", {
+    type: "line",
+    data: {
+      labels: {{ x_axes_2016 | safe }},
+      datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: {{ y_axes_2016 | safe }}
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+        
+      }
+    }
+  });
+  </script>
+  
+
+{% endblock %}

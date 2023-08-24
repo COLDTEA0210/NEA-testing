@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}2016 Paper 2 MS{% endblock %}
+
+{% block body %}
+
+<iframe class="MS" src="../static/Papers/2016Paper2MS.pdf" frameborder="0"></iframe>
+
+<form class="MS" method="POST">
+    <label for="score">Your Score</label>
+    <input 
+        type="integer" 
+        id="score" 
+        name="score" 
+        placeholder="Enter Score:"
+        />
+        <button type="submit">Add Marks</button>        
+</form>
+{% endblock %}

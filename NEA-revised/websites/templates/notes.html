@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Flashcards{% endblock %}
+
+{% block body %}
+<h2 align="center">Flashcards</h2>
+<ul class="fc">
+    {% for note in user.notes %}
+    <br />
+    <li class="fc">
+        <a class="fc">
+            {{ note.data }}
+            <button class="close" type="button" onClick="deleteNote({{ note.id }})" >
+                X
+            </button>
+        </a>
+    </li>
+    <br />
+    <br />
+    {% endfor %}
+</ul>
+<br />
+<form method="POST">
+    <textarea name="note", id="note", rows="30", cols="205"></textarea>
+    <div align="center">
+        <button type="submit">Add flash cards</button>
+    </div>
+</form>
+{% endblock %}
